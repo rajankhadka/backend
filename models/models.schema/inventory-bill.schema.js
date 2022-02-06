@@ -1,0 +1,22 @@
+module.exports = (DataTypes) =>{
+    return{
+        billId:{
+            type:DataTypes.INTEGER,
+            references:{
+                model:{
+                    tableName:'bills'
+                },
+                key:'id'
+            }
+        },
+        inventoryitemId:{
+            type:DataTypes.INTEGER,
+            references:{
+                model:{
+                    tableName:'inventoryitems'
+                },
+                key:'id'
+            }
+        }
+    }
+};

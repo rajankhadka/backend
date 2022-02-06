@@ -1,0 +1,52 @@
+module.exports = (DataTypes) =>{
+    return {
+        id:{
+            type:DataTypes.BIGINT,
+            allowNull:false,
+            autoIncrement:true,
+            primaryKey:true,
+        },
+        date:{
+            type:DataTypes.DATE,
+            allowNull:false,
+        },
+        // buy/sell
+        billType:{
+            type:DataTypes.STRING(3),
+            allowNull:false,
+        },
+        paymantType:{
+            type:DataTypes.STRING(20),
+            allowNull:false,
+        },
+        billName:{
+            type:DataTypes.STRING(20),
+            allowNull:false,
+        },
+        billAddress:{
+            type:DataTypes.STRING(20),
+            allowNull:false,
+        },
+        billContact:{
+            type:DataTypes.STRING(13),
+            allowNull:false,
+        },
+        billregistration:{
+            type:DataTypes.STRING(25),
+            allowNull:false,
+        },
+        //bill total amount/ paid/ due
+        billTotalAmount:{
+            type:DataTypes.FLOAT(11,2),
+            allowNull:false,
+        },
+        billpaidAmount:{
+            type:DataTypes.FLOAT(11,2),
+            allowNull:false,
+        },
+        billDueAmount:{
+            type:DataTypes.FLOAT(11,2),
+            allowNull:true,
+        },
+    }
+};
