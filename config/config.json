@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "rajankhadka",
+    "password": null,
+    "database": "training_db",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "rajankhadka",
+    "password": null,
+    "database": "training_db",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "rajankhadka",
+    "password": null,
+    "database": "training_db",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
