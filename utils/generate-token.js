@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const ACCESSTOKEN_SECRET = process.env.JWT_ACCESS_SECRET;
 const algorithm = 'HS256';
-const expiresTime = '2m';
+const expiresTime = '4h';
 
 //access token promise
 const accesstokenPromise = (data) =>{

@@ -9,14 +9,31 @@ module.exports = (DataTypes) => {
         itemName:{
             type:DataTypes.STRING(50),
             allowNull:false,
+            unique:true,
         },
-        quantity:{
+        itemQuantity:{
             type:DataTypes.INTEGER,
             allowNull:false,
         },
-        pieces:{
+        itemBuyPrice:{
+            type:DataTypes.FLOAT(9,7),
+            allowNull:false,
+        },
+        itemSellPrice:{
+            type:DataTypes.FLOAT(9,7),
+            allowNull:false,
+        },
+        itemRemaining:{
             type:DataTypes.INTEGER,
             allowNull:false,
         },
+        itemSold:{
+            type:DataTypes.INTEGER,
+            allowNull:false,
+        },
+        itemCatagory:{
+            type:DataTypes.STRING(50),
+            allowNull:false,
+        }
     }
 };

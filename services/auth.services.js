@@ -1,5 +1,5 @@
 const { userModels } = require("../libs/db-connection");
-const generaterefreshToken = require("../utils/generate-refresh-token");
+// const generaterefreshToken = require("../utils/generate-refresh-token");
 const { generateAccesstoken } = require("../utils/generate-token");
 const { verifypassword } = require("../utils/password");
 const refreshTokenServices = require("./refreshToken.services");
@@ -19,15 +19,15 @@ class AuthServices{
             const passwordMatched = await verifypassword(data.password,foundUser.password);
             if(!passwordMatched) throw new Error('Cannot Authenticated to the system');
             const accessToken = await generateAccesstoken({username:data.username});
-            const refreshToken = generaterefreshToken();
-            const refreshTokenCreated = await refreshTokenServices.createrefreshToken({
-                username:data.username,
-                refreshToken:refreshToken,
-            });
-            if(!refreshTokenCreated) throw new Error('Cannot Authenticated refresh token');
+            // const refreshToken = generaterefreshToken();
+            // const refreshTokenCreated = await refreshTokenServices.createrefreshToken({
+            //     username:data.username,
+            //     refreshToken:refreshToken,
+            // });
+            // if(!refreshTokenCreated) throw new Error('Cannot Authenticated refresh token');
 
             //encrypt access token
-            return {accessToken:accessToken,refreshToken:refreshToken};
+            return {accessToken:accessToken};
         } catch (error) {
             throw error;
         }
@@ -37,18 +37,18 @@ class AuthServices{
     //checking the refresh token is valid or not
     async newTokens({uuid}){
         try {
-            const foundrefreshToken = await refreshTokenServices.getspecificrefreshToken({uuid:uuid});
-            if(!foundrefreshToken) throw new Error('Enter the Credentials');
-            if(!foundrefreshToken.authorization){
-                await refreshTokenServices.removeallrefreshTokenOfSpecificUser({
-                    username: foundrefreshToken.username,
-                });
-                throw new Error('Authorization failed, Login Again');
-            }
-            await refreshTokenServices.updateoldrefreshToken({uuid:foundrefreshToken.refreshToken});
+            // const foundrefreshToken = await refreshTokenServices.getspecificrefreshToken({uuid:uuid});
+            // if(!foundrefreshToken) throw new Error('Enter the Credentials');
+            // if(!foundrefreshToken.authorization){
+                // await refreshTokenServices.removeallrefreshTokenOfSpecificUser({
+                    // username: foundrefreshToken.username,
+                // });
+            //     throw new Error('Authorization failed, Login Again');
+            // }
+            // await refreshTokenServices.updateoldrefreshToken({uuid:foundrefreshToken.refreshToken});
 
             //create new refresh token
-            const newrefreshToken = generaterefreshToken();
+            // const newrefreshToken = generaterefreshToken();
             const newaccessToken = await generateAccesstoken({username:foundrefreshToken.username});
 
             //save new refresh token to db
@@ -70,6 +70,8 @@ class AuthServices{
             throw error;
         }
     }
+
+    
 }
 
 module.exports = new AuthServices();

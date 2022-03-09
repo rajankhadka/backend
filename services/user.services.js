@@ -1,3 +1,4 @@
+const req = require('express/lib/request');
 const { userModels } = require('../libs/db-connection');
 const { hashpassword } = require('../utils/password');
 
@@ -20,7 +21,7 @@ class UserServices{
                 password:data.password,
                 phonenumber:data.phonenumber,
             });
-            return {message:"created!!!"};
+            return {data:{message:"created!!!"}};
             
         } catch (error) {
             throw error;
@@ -31,7 +32,11 @@ class UserServices{
     //get user specific info
     async getSpecificUser(data){
         try {
-            
+            return{
+                data:data,
+                message:'get specific user',
+                statusCode:200,
+            }
         } catch (error) {
             throw error;
         }

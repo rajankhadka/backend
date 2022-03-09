@@ -16,8 +16,9 @@ class UserController{
     //get user specific info
     async getSpecificUser(req,res,next){
         try {
-            console.log(req.user);
-            res.json({user:req.user});
+            // console.log(req.user);
+            // res.json({user:req.user});
+            return globalResponse(res,{data:req.user,message:'get specific user',statusCode:200})
         } catch (error) {
             next(error);
         }

@@ -3,6 +3,7 @@ const passport = require('passport');
 const {globalErrorResponse} = require('./error-exception/global-error-response');
 const pagenotfound = require('./error-exception/pagenotfound');
 const db = require('./libs/db-connection');
+const cors = require('cors');
 require("dotenv").config();
 require('./middleware/jwt-token-verify.middleware');
 
@@ -25,6 +26,10 @@ const app=express();
 //middleware
 app.use(express.json());
 app.use(passport.initialize());
+app.use(cors({
+    origin:"http://localhost:3000",
+    methods:["PATCH",'GET', 'PUT', 'POST','DELETE'],
+}))
 
 // routes
 initRoutes(app);

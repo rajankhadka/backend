@@ -6,8 +6,8 @@ module.exports = (app) =>{
     app.route('/login')
         .post( authMiddleware.login ,authContollers.login);
     
-    app.route('/tokens')
-        .post(authContollers.newaccessToken);
+    // app.route('/tokens')
+    //     .post(authContollers.newaccessToken);
 
     app.route('/logout')
         .post(passport.authenticate('jwt',{session:false}),authContollers.logout);

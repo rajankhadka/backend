@@ -8,14 +8,14 @@ module.exports = (DataTypes) =>{
         },
         date:{
             type:DataTypes.DATE,
-            allowNull:false,
+            defaultValue:Date.now(),
         },
         // buy/sell
         billType:{
             type:DataTypes.STRING(3),
             allowNull:false,
         },
-        paymantType:{
+        billPaymantType:{
             type:DataTypes.STRING(20),
             allowNull:false,
         },

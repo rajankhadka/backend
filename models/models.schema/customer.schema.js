@@ -1,0 +1,21 @@
+module.exports = (DataTypes) =>{
+    return{
+        id:{
+            type:DataTypes.BIGINT,
+            allowNull:false,
+            autoIncrement:true,
+            primaryKey:true,
+        },
+        phonenumber:{
+            type:DataTypes.STRING(14),
+            allowNull:false,
+            unique:true,
+        },
+        name:{
+            type:DataTypes.STRING(50),
+        },
+        address:{
+            type:DataTypes.STRING(50),
+        }
+    }
+}
