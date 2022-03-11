@@ -1,22 +1,22 @@
 {
   "development": {
-    "username": "rajankhadka",
-    "password": null,
-    "database": "training_db",
+    "username": "postgres",
+    "password": "nischal123",
+    "database": "inventory",
     "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
-    "username": "rajankhadka",
-    "password": null,
-    "database": "training_db",
+    "username": "postgres",
+    "password": "nischal123",
+    "database": "inventory",
     "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
-    "username": "rajankhadka",
-    "password": null,
-    "database": "training_db",
+    "username": "postgres",
+    "password": "nischal123",
+    "database": "inventory",
     "host": "localhost",
     "dialect": "postgres"
   }
