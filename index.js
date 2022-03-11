@@ -25,7 +25,7 @@ const app=express();
 
 //middleware
 app.use(express.json());
-// app.use(passport.initialize());
+app.use(passport.initialize());
 app.use(cors({
     origin:"http://localhost:3000",
     methods:["PATCH",'GET', 'PUT', 'POST','DELETE'],

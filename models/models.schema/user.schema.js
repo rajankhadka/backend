@@ -33,9 +33,6 @@ module.exports = (DataTypes) =>{
             allowNull:false,
             unique:true,
         },
-        profilepicture:{
-            type:DataTypes.STRING(100),
-            allowNull:true,
-        },
+        
     }
 }

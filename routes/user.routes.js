@@ -4,7 +4,7 @@ const userMiddleware = require('../middleware/validations.middleware/user.middle
 
 module.exports = (app) =>{
     app.route('/register')
-        .post(passport.authenticate('jwt',{session:false}),userMiddleware.registerUser, userControllers.registeruser);
+        .post(userMiddleware.registerUser, userControllers.registeruser);
     app.route('/user')
         .get(
             passport.authenticate('jwt',{session:false}),
