@@ -27,17 +27,17 @@ const inventoryitemsModels = inventoryitems(inventorydb,DataTypes);
 const customerModels = customers(inventorydb,DataTypes);
 
 //synchronizing models
-(async()=>{
-    try {
-        // await userModels.sync({force:true});
-        // await refreshTokenModels.sync({force:true});
-        await billmanagementModels.sync({force:true});
-        await inventoryitemsModels.sync({force:true});
-        await customerModels.sync({force:true});
-    } catch (error) {
-        console.error("cannot created table in db");
-    }
-})();
+// (async()=>{
+//     try {
+//         // await userModels.sync({force:true});
+//         // await refreshTokenModels.sync({force:true});
+//         await billmanagementModels.sync({force:true});
+//         await inventoryitemsModels.sync({force:true});
+//         await customerModels.sync({force:true});
+//     } catch (error) {
+//         console.error("cannot created table in db");
+//     }
+// })();
 
 
 //exporting models
