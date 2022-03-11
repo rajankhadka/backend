@@ -4,7 +4,7 @@ const authMiddleware = require('../middleware/validations.middleware/auth.middle
 
 module.exports = (app) =>{
     app.route('/login')
-        .post( authMiddleware.login ,authContollers.login);
+        .post(  authContollers.login);
     
     // app.route('/tokens')
     //     .post(authContollers.newaccessToken);
