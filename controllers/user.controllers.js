@@ -5,7 +5,6 @@ class UserController{
     //register user
     async registeruser(req,res,next){
         try {
-            console.log("first");
             let {message} = await userServices.registerUser(req.body);
             
             globalResponse(res,{data:message,statusCode:201});

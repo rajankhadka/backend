@@ -7,7 +7,6 @@ class UserServices{
     //register user
     async registerUser(data){
         try {
-            console.log(data);
             if(!data.repassword) throw new Error("re-password is required!!!");
             if(!data.password) throw new Error("password is required!!!")
             if((data.password !== data.repassword) ) throw new Error('Password/rePassword doesnot match');
